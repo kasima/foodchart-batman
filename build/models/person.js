@@ -4,7 +4,6 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   FoodchartBatman.Person = (function(_super) {
-    var _this = this;
 
     __extends(Person, _super);
 
@@ -37,10 +36,8 @@
       return this.save();
     };
 
-    Person.accessor('canDelete', {
-      get: function() {
-        return Person.get('balance') === 0 && Person.get('isBalanced');
-      }
+    Person.accessor('canDelete', function() {
+      return this.get('balance') === 0 && Person.get('isBalanced');
     });
 
     Person.classAccessor('balance', {
@@ -67,6 +64,6 @@
 
     return Person;
 
-  }).call(this, Batman.Model);
+  })(Batman.Model);
 
 }).call(this);

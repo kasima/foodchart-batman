@@ -25,9 +25,7 @@ class FoodchartBatman.Person extends Batman.Model
     @set('balance', @get('balance') - 1)
     @save()
 
-  @accessor 'canDelete'
-    get: =>
-      @get('balance') == 0 && Person.get('isBalanced')
+  @accessor 'canDelete', -> @get('balance') == 0 && Person.get('isBalanced')
 
   @classAccessor 'balance',
     get: ->
