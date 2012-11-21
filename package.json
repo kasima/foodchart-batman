@@ -5,8 +5,9 @@
   "version": "0.1.0",
   "main": "build/app.js",
   "engines": {
-    "node": "*"
-  },
+    "node": "0.8.14",
+    "npm": "1.0.x"
+  }
   "dependencies": {
     "batman": "~>0.1.0"
   },
